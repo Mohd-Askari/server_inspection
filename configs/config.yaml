@@ -1,0 +1,31 @@
+# CoreIP Server Inspector Configuration
+# Safe defaults: binds to 127.0.0.1 (local access only)
+
+server:
+  host: "127.0.0.1"
+  port: 8080
+  allow_remote: false
+  tls_cert_file: ""
+  tls_key_file: ""
+
+auth:
+  enabled: true
+  username: "admin"
+  # Replace with a generated bcrypt hash before production deployment.
+  # Initial password is used if password_hash is empty. Change immediately on first launch!
+  initial_password: "CoreIPAdmin2026!"
+  session_timeout_minutes: 60
+  rate_limit_per_minute: 10
+
+collector:
+  poll_interval_seconds: 5
+  cache_inventory_seconds: 30
+  history_buffer_size: 120
+  service_max_items: 200
+  smart_enabled: true
+  smart_cache_seconds: 300
+  mock_mode: false
+
+logging:
+  level: "info"
+  audit_log_path: ""

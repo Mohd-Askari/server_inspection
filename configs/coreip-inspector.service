@@ -1,0 +1,32 @@
+[Unit]
+Description=CoreIP Server Inspector - Linux Telemetry and Health Service
+Documentation=https://github.com/coreip/server-inspector
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=coreip
+Group=coreip
+ExecStart=/usr/bin/coreip-inspector -config /etc/coreip-inspector/config.yaml
+Restart=on-failure
+RestartSec=5s
+
+# Security Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+MemoryDenyWriteExecute=true
+CapabilityBoundingSet=CAP_SYS_RAWIO
+
+# Resource Limits
+LimitNOFILE=65535
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+# Binaries and packages
+bin/
+dist/
+
+# System / OS files
+.DS_Store
+*.tmp

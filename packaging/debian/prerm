@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+if [ -d /run/systemd/system ]; then
+    systemctl stop coreip-inspector.service || true
+    systemctl disable coreip-inspector.service || true
+fi
+
+exit 0

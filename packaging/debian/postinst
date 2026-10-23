@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+
+# Create coreip dedicated system user and group if missing
+if ! getent group coreip >/dev/null 2>&1; then
+    groupadd --system coreip
+fi
+
+if ! getent passwd coreip >/dev/null 2>&1; then
+    useradd --system --gid coreip --home-dir /var/lib/coreip-inspector --no-create-home --shell /usr/sbin/nologin coreip
+fi
+
+# Set directory and configuration permissions
+mkdir -p /var/log/coreip-inspector /etc/coreip-inspector
+chown -R coreip:coreip /var/log/coreip-inspector
+chmod 0750 /var/log/coreip-inspector
+
+if [ -f /etc/coreip-inspector/config.yaml ]; then
+    chown root:coreip /etc/coreip-inspector/config.yaml
+    chmod 0640 /etc/coreip-inspector/config.yaml
+fi
+
+# Reload systemd configuration
+if [ -d /run/systemd/system ]; then
+    systemctl daemon-reload || true
+fi
+
+echo "CoreIP Server Inspector installed successfully."
+echo "Enable and start the service with:"
+echo "  sudo systemctl enable --now coreip-inspector"
+exit 0
