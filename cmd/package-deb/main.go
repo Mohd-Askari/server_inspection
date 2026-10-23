@@ -246,3 +246,4 @@ func writeArArchive(w io.Writer, entries []arEntry) error {
 	}
 	return nil
 }
+

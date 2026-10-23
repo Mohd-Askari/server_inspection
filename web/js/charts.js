@@ -161,3 +161,4 @@ class CoreIPCharts {
     ctx.fillText(label, centerX, centerY + 12);
   }
 }
+

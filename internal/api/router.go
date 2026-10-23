@@ -78,3 +78,4 @@ func NewRouter(
 	// Wrap root handler in security middleware
 	return sec.Wrap(mux)
 }
+

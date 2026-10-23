@@ -299,3 +299,4 @@ func (c *SystemCollector) detectVirtualization(ctx context.Context, info *models
 		Description: "Physical Server (Bare Metal)",
 	}
 }
+

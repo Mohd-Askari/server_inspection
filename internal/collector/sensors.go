@@ -141,3 +141,4 @@ func (c *SensorsCollector) scanThermalZones(info *models.SensorInfo) {
 		})
 	}
 }
+

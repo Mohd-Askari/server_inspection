@@ -184,3 +184,4 @@ func (c *GPUCollector) collectSysfsPCI() []models.GPUDevice {
 
 // Ensure scanner is not unused
 var _ = bufio.ScanLines
+

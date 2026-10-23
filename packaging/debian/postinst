@@ -29,3 +29,4 @@ echo "CoreIP Server Inspector installed successfully."
 echo "Enable and start the service with:"
 echo "  sudo systemctl enable --now coreip-inspector"
 exit 0
+

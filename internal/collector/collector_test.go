@@ -463,3 +463,4 @@ REDHAT_SUPPORT_PRODUCT_VERSION="9"
 		t.Errorf("expected Role 'guest', got '%s'", info.Virtualization.Role)
 	}
 }
+

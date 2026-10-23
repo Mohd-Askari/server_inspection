@@ -29,3 +29,4 @@ collector:
 logging:
   level: "info"
   audit_log_path: ""
+

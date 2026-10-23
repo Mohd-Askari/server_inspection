@@ -20,8 +20,14 @@ const CoreIPApp = {
     this.setupNavigation();
     this.setupEventListeners();
     this.checkSession().then(() => {
-      this.refreshAll();
-      this.startPolling();
+      if (!this.state.session || !this.state.session.auth_enabled || this.state.session.authenticated) {
+        this.refreshAll();
+        this.startPolling();
+      } else {
+        const updateEl = document.getElementById('last-updated-text');
+        if (updateEl) updateEl.textContent = 'Authentication required';
+        this.showLoginModal();
+      }
     });
   },
 
@@ -201,6 +207,11 @@ const CoreIPApp = {
     if (this.state.pollIntervalSeconds <= 0) return;
 
     this.state.pollTimer = setInterval(async () => {
+      // Don't poll if unauthenticated and auth is enabled
+      if (this.state.session && this.state.session.auth_enabled && !this.state.session.authenticated) {
+        return;
+      }
+
       // Only fetch live metrics + history on poll ticks for efficiency
       try {
         const resHist = await this.apiRequest('/api/v1/metrics/history');
@@ -290,6 +301,7 @@ const CoreIPApp = {
       this.showToast(`Logged in successfully as ${data.username}`, 'success');
       await this.checkSession();
       this.refreshAll();
+      this.startPolling();
     } catch (err) {
       this.showToast(err.message, 'danger');
     }
@@ -430,3 +442,4 @@ const CoreIPApp = {
 window.addEventListener('DOMContentLoaded', () => {
   CoreIPApp.init();
 });
+

@@ -95,3 +95,4 @@ func (c *MemoryCollector) Collect(ctx context.Context) (models.MemoryInfo, error
 
 	return info, nil
 }
+

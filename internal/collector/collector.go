@@ -477,3 +477,4 @@ func (m *Manager) sampleMetrics(ctx context.Context) {
 func (m *Manager) Stop() {
 	close(m.stopCh)
 }
+

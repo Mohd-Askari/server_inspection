@@ -10,3 +10,4 @@ Description: Production Linux server hardware inventory and health monitoring ap
  CoreIP Server Inspector provides local and secure remote web-based inspection
  of Ubuntu and CentOS/RHEL servers, physical storage diagnostics, live monitoring,
  and downloadable system reports without requiring external databases or runtimes.
+

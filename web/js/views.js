@@ -541,3 +541,4 @@ class CoreIPViews {
     document.getElementById('set-session-user').textContent = sess && sess.authenticated ? sess.username : 'Not Authenticated';
   }
 }
+

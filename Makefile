@@ -40,3 +40,4 @@ run: build
 clean:
 	@echo "==> Cleaning build artifacts..."
 	rm -rf $(BIN_DIR) $(DIST_DIR)
+

@@ -16,3 +16,4 @@ func getFilesystemStats(path string) (total, free, avail uint64, err error) {
 	avail = stat.Bavail * bsize
 	return total, free, avail, nil
 }
+

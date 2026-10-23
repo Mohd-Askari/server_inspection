@@ -36,3 +36,4 @@ rpmbuild --define "_topdir ${RPMBUILD_DIR}" -bb "${RPMBUILD_DIR}/SPECS/coreip-in
 
 cp "${RPMBUILD_DIR}/RPMS/${ARCH}"/*.rpm "${DIST_DIR}/"
 echo "RPM built successfully in ${DIST_DIR}/"
+

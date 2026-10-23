@@ -79,3 +79,4 @@ func TestRateLimiter(t *testing.T) {
 		t.Errorf("after reset must be allowed")
 	}
 }
+

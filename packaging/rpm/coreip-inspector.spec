@@ -60,3 +60,4 @@ chown -R coreip:coreip %{_localstatedir}/log/coreip-inspector || true
 %changelog
 * Fri Oct 24 2026 CoreIP Systems Engineering <support@coreip.local> - 1.0.0-1
 - Initial production release of CoreIP Server Inspector
+

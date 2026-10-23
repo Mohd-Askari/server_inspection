@@ -246,3 +246,4 @@ func (c *NetworkCollector) collectDNSServers() []string {
 
 	return dns
 }
+

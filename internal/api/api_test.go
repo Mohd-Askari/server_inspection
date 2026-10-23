@@ -178,3 +178,4 @@ func TestAPI_StaticFileServingAndSPAFallback(t *testing.T) {
 		t.Errorf("SPA fallback missing index.html content")
 	}
 }
+

@@ -395,13 +395,16 @@
       <form id="login-form">
         <div class="form-group">
           <label for="login-username">Username</label>
-          <input type="text" id="login-username" class="input-control" required autocomplete="username">
+          <input type="text" id="login-username" class="input-control" required autocomplete="username" value="admin">
         </div>
         <div class="form-group">
           <label for="login-password">Password</label>
-          <input type="password" id="login-password" class="input-control" required autocomplete="current-password">
+          <input type="password" id="login-password" class="input-control" required autocomplete="current-password" value="CoreIPAdmin2026!">
         </div>
-        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1.5rem;">
+        <div style="font-size:0.75rem; color:var(--color-brand); margin-bottom:1rem; background:rgba(56,189,248,0.1); padding:0.5rem; border-radius:4px; border:1px solid rgba(56,189,248,0.25);">
+          Default Operator Credentials: <strong>admin</strong> / <strong>CoreIPAdmin2026!</strong>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem;">
           <button type="button" id="btn-close-modal" class="btn">Cancel</button>
           <button type="submit" class="btn btn-primary">Sign In</button>
         </div>
@@ -418,3 +421,4 @@
   <script src="js/app.js"></script>
 </body>
 </html>
+

@@ -84,3 +84,4 @@ func (rb *RingBuffer) Count() int {
 	defer rb.mu.RUnlock()
 	return rb.count
 }
+

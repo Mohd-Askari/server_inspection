@@ -52,3 +52,4 @@ func TestRingBuffer_FifoAndRollover(t *testing.T) {
 		t.Errorf("expected latest to be 40, got %v", latest)
 	}
 }
+
